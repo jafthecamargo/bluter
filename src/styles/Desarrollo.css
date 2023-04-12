@@ -1,0 +1,56 @@
+.card {
+    width: 240px;
+    height: 200px;
+    background: #ffffff;
+    justify-content: space-evenly;
+}
+
+.card-info {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 30px;
+    left: 12px;
+    gap: 10px;
+}
+
+.card-img {
+    --size: 200px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 20px;
+    transition: all .5s;
+}
+
+.card-img:hover {
+    scale: 1.02;
+}
+
+.text-body {
+    font-size: 17px;
+    text-align: center;
+    color: black;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    transition: all .5s;
+}
+
+.text-body:hover {
+    scale: 1.01;
+}
+
+.text-title {
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #6C63FF;
+    letter-spacing: 0.05rem;
+    transition: all .5s;
+}
+
+.text-title:hover {
+    scale: 1.02;
+}
+
+
