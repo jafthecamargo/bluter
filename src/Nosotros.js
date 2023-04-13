@@ -1,13 +1,11 @@
 import React from "react";
 import './App.css';
-import Barra from "./componentes/Barra";
 import Desarrollo from "./componentes/Desarrollo";
 import foot from "./img/foot.png";
 
 function Nosotros() {
     return (
         <div className='d0'>
-            <Barra />
             <div id='nosotros' className='d4'>
                 <h2 className='text-nos'>NOSOTROS</h2>
                 <div className='div1'>

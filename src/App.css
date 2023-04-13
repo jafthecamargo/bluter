@@ -1,36 +1,184 @@
-.App {
+.d00 {
   position: relative;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  top: 100px;
-  padding: 100px 0 200px 0;
-  background-color: #ffffff;
+  height: 100%;
 }
 
-.h1 {
+.d0 {
   position: relative;
-  top: 10px;
-  left: 310px;
-  font-size: 50px;
-  font-weight: 600;
-  color: #000000;
-  width: max-content;
+  height: 650px;
+  width: 100%;
+  background-color: white;
+}
+
+.d01 {
+  position: relative;
+  top: 130px;
+  left: 100px;
+  width: 450px;
+  height: max-content;
 }
 
 h2 {
-  color: #6C63FF;
-  font-size: 50px;
+  font-size: 45px;
+  font-weight: 600;
   line-height: 50px;
-  transition: all .5s;
+  color: #B03D47;
 }
 
-h2:hover {
-  scale: 1.01;
+.d02 {
+  position: relative;
+  top: 165px;
+  left: 100px;
+  width: 480px;
+  height: max-content;
 }
+
+.txt1 {
+  font-size: 18px;
+  font-weight: 400;
+  color: black;
+}
+
+.img1 {
+  position: absolute;
+  top: 0px;
+  width: 50%;
+  height: 100%;
+  right: 0;
+  z-index: 1;
+  object-fit: cover;
+}
+
+.boton1 {
+  position: relative;
+  top: 200px;
+  left: 100px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #B03D47;
+  border-color: white;
+  border-style: solid;
+  background-color: white;
+  transition: all .3s;
+}
+
+.boton1:hover {
+  scale: 1.02;
+  cursor: pointer;
+}
+
+.arrow {
+  position: relative;
+  top: 204px;
+  left: 110px;
+  height: 3%;
+}
+
+.d1 {
+  position: relative;
+  height: 650px;
+  width: 100%;
+  background-color: #F9F9F9;
+}
+
+.img2 {
+  position: absolute;
+  top: 0px;
+  width: 30%;
+  height: 100%;
+  left: 0;
+  z-index: 1;
+  object-fit: cover;
+}
+
+.d001 {
+  position: relative;
+  top: 190px;
+  left: 470px;
+  width: 720px;
+  height: max-content;
+}
+
+.txt2 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #4B4B4B;
+}
+
+.heart {
+  position: relative;
+  top: -115px;
+  left: 360px;
+  width: 3%;
+}
+
+.firma {
+  position: relative;
+  top: -10px;
+  left: 410px;
+  width: 39%;
+}
+
+.d2 {
+  position: relative;
+  height: 650px;
+  width: 100%;
+  background-color: white;
+}
+
+.d-foot {
+  position: absolute;
+  bottom: 50px;
+  align-items: center;
+  padding: 0 0 0 0;
+  height: 10%;
+  width: 100%;
+}
+
+.f-img {
+  position: absolute;
+  bottom: 40px;
+  left: 600px;
+  width: 8%;
+}
+
+.f-text {
+  position: absolute;
+  left: 430px;
+  bottom: 0;
+  font-size: 13px;
+  font-weight: 300;
+  color: #636363;
+}
+
+.f-policies {
+  position:absolute;
+  left: 750px;
+  bottom: 0;
+  font-size: 13px;
+  font-weight: 300;
+  color: #B03D47;
+  transition: all .3s;
+}
+
+.f-policies:hover {
+  cursor: pointer;
+  scale: 1.02;
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
 
 .h3 {
-  position: relative;
+  position: static;
   font-size: 18px;
   font-weight: 700;
   color: black;
@@ -50,7 +198,7 @@ tr:hover {
 }
 
 .text-p {
-  position: relative;
+  position: static;
   top: 30px;
   left: 10px;
   text-align: center;
@@ -64,22 +212,10 @@ tr:hover {
   scale: 1.003;
 }
 
-p {
-  position: relative;
-  font-size: 20px;
-  font-weight: 500;
-  top: -10px;
-  left: -35px;
-  color: black;
-  transition: all .5s;
-}
 
-p:hover {
-  scale: 1.01;
-}
 
 .p0 {
-  position: relative;
+  position: static;
   font-size: 12px;
   text-align: justify;
   top: -399px;
@@ -90,50 +226,8 @@ p:hover {
   padding: 20px 0 0 0;
 }
 
-.d00 {
-  position: relative;
-  padding-top: 10px;
-  top: 50px;
-  left: 150px;
-  width: 950px;
-  height: 25%;
-  padding-bottom: 60px;
-}
-
-.d0 {
-  position: relative;
-  top: -25px;
-  height: 650px;
-  align-content: center;
-}
-
-.d1 {
-  position: relative;
-  top: -400px;
-  left: 100px;
-  height: 400px;
-  width: 518px;
-}
-
-.d2 {
-  position: relative;
-  width: 200px;
-  top: 30px;
-  left: 10px;
-  width: 400px;
-  height: max-content;
-}
-
-.d3 {
-  position: relative;
-  top: 80px;
-  left: 50px;
-  width: 400px;
-  height: max-content;
-}
-
 .d4{
-  position: relative;
+  position: static;
   padding-top: 10px;
   top: 50px;
   left: 150px;
@@ -143,14 +237,14 @@ p:hover {
 }
 
 .bienvenido {
-  position: relative;
+  position: static;
   top: 130px;
   left: 395px;
   width: max-content;
 }
 
 .rt {
-  position: relative;
+  position: static;
   top: 165px;
   left: 750px;
   border-radius: 10px;
@@ -175,7 +269,7 @@ p:hover {
 }
 
 .cerrar {
-  position: relative;
+  position: static;
   top: 165px;
   left: 765px;
   border-radius: 10px;
@@ -200,92 +294,67 @@ p:hover {
 }
 
 .div1 {
-  position: relative;
+  position: static;
   top: 50px;
   left: 40px;
   width: max-content;
 }
 
 .div2 {
-  position: relative;
+  position: static;
   top: -150px;
   left: 385px;
   width: max-content;
 }
 
 .div3 {
-  position: relative;
+  position: static;
   top: -350px;
   left: 740px;
   width: max-content;
 }
 
 .div5 {
-  position: relative;
+  position: static;
   top: 235px;
   height: 70px;
 }
 
 .div6 {
-  position: relative;
+  position: static;
   top: 6270px;
   height: 70px;
 }
 
-.div-foot {
-  position: absolute;
-  align-items: center;
-  padding: 0 0 0 0;
-  height: 10%;
-  width: 100%;
-}
+
 
 .text-nos{
-  position: relative;
+  position: static;
   left: 345px;
   width: max-content;
 }
 
 .text-inf{
-  position: relative;
+  position: static;
   left: 370px;
   width: max-content;
 }
 
-.text-test{
-  position: relative;
+.text-test {
+  position: static;
   left: 420px;
   width: max-content;
 }
 
-.ilu {
-  position: relative;
-  top: 70px;
-  left: 470px;
-  width: 60%;
-  transition: all .5s;
-}
-
-.ilu:hover {
-  scale: 1.01;
-}
-
-.foot {
-  position: relative;
-  left: 525px;
-  bottom: 40px;
-  width: 17%;
-}
-
 .foot-1 {
-  position: relative;
+  position: static;
   left: 525px;
   top: -110px;
   width: 17%;
 }
 
 .home {
-  position: relative;
+  position: static;
   left: 20px;
   top: 330px;
   width: 17%;
@@ -361,61 +430,8 @@ p:hover {
   padding: 0 0 0 10px;
 }
 
-.f-text {
-  position: relative;
-  top: -55px;
-  left: 405px;
-  font-size: 13px;
-  width: max-content;
-  font-weight: 400;
-  color: #636363;
-}
-
-.f-policies {
-  position: relative;
-  top: -75px;
-  left: 725px;
-  font-size: 13px;
-  width: max-content;
-  font-weight: 400;
-  color: #636363;
-  transition: all .3s;
-}
-
-.f-policies:hover {
-  cursor: pointer;
-  color: #6C63FF;
-  text-decoration: underline;
-}
-
-.test {
-  position: relative;
-  left: 15px;
-  top: 120px;
-  border-radius: 10px;
-  width: 40%;
-  height:13%;
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  color: white;
-  background-color: #6C63FF;
-  font-weight: 500;
-  border-color: #6C63FF;
-  border-style: solid;
-  transition: all .3s;
-}
-
-.test:hover {
-  background-color: white;
-  border-color: #6C63FF;
-  color: #6C63FF;
-  cursor: pointer;
-  scale: 1.02;
-}
-
 .inicia {
-  position: relative;
+  position: static;
   left: 425px;
   top: 280px;
   border-radius: 5px;
@@ -439,7 +455,7 @@ p:hover {
 }
 
 .extra-1 {
-  position: relative;
+  position: static;
   top: 375px;
   left: 637px;
   width: max-content;
@@ -499,7 +515,7 @@ p:hover {
 }
 
 .universidades{
-  position: absolute;
+  position: static;
   top: 95px;
   left: -30px;
   font-weight: 500;
@@ -532,7 +548,7 @@ p:hover {
 }
 
 .extras {
-  position: absolute;
+  position: static;
   top: 90px;
   left: 595px;
   font-weight: 500;
@@ -554,7 +570,7 @@ p:hover {
 }
 
 .div31 {
-  position: relative;
+  position: static;
   top: 100px;
   left: 680px;
   width: 500px;
@@ -587,29 +603,8 @@ p:hover {
 }
 
 .div32 {
-  position: relative;
+  position: static;
   top: -110px;
   left: 350px;
   width: 650px;
-}
-
-.eslogan {
-  position: relative;
-  top: -150px;
-  left: 150px;
-  font-size: 23px;
-  font-weight: 600;
-  color: black;
-  text-align: center;
-  transition: all .5s;
-  width: 1000px;
-}
-
-.eslogan:hover {
-    scale: 1.005;
-}
-
-.intro {
-    font-size: 18px;
-    font-weight: 500;
 }

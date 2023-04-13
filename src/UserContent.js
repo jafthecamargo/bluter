@@ -1,14 +1,12 @@
 import React from "react";
 import './App.css';
 import foot from "./img/foot.png";
-import Barra from "./componentes/Barra";
 import Pregunta from "./componentes/Pregunta";
 
 function UserContent() {
 
     return (
         <div className='d0'>
-            <Barra />
             <div className='d00'>
                 <h2 className='text-test'>TEST</h2>
                 <p className='text-p'>

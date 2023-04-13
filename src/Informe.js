@@ -2,13 +2,10 @@ import React, {useEffect} from "react";
 import './App.css';
 import foot from "./img/foot.png";
 import Swal from "sweetalert2";
-import Barra from "./componentes/Barra";
 
 function Informe() {
 
     const[data, setData] = React.useState([]);
-
-    const uid = app.auth().currentUser.email;
 
     function test() {
         window.location.href = '/test';
@@ -18,14 +15,12 @@ function Informe() {
     }
 
     const cerrarSesion = () => {
-        app.auth().signOut();
         cerrar();
     }
 
     const cerrar = () => {
         Swal.fire({
             title: "¡Sesión cerrada con éxito!",
-            text: app.auth().currentUser.email,
             icon: "success",
             timer: 1500,
             showConfirmButton: false,
@@ -35,7 +30,6 @@ function Informe() {
 
     return (
         <div className='d0'>
-            <Barra />
             <div className='d00'>
                 <h2 className='text-inf'>INFORME</h2>
                 <table className='universidades'>
@@ -52,7 +46,6 @@ function Informe() {
                     <tbody>
                     <div className='usuario'>
                     <tr className='h3'>USUARIO</tr>
-                    <tr>{app.auth().currentUser.email}</tr>
                     </div>
                     <div className='area'>
                     <tr className='h3'>ÁREA</tr>
