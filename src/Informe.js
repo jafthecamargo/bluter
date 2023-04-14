@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import './App.css';
-import foot from "./img/foot.png";
+import logo from "./img/bluter.svg";
 import Swal from "sweetalert2";
 
 function Informe() {
@@ -57,7 +57,7 @@ function Informe() {
             <button className='rt' onClick={test}>Realizar Test</button>
             <button className='cerrar' onClick={cerrarSesion}>Cerrar Sesión</button>
             <div className='div5'>
-                <img className='foot' src={foot} alt='univcon'></img>
+                <img className='f-img' src={logo} alt='bluter'></img>
                 <a className='f-text'>© 2022 UNIVCON Todos los derechos reservados.</a>
                 <a className='f-policies' onClick={inicio}>Política de Privacidad.</a>
             </div>

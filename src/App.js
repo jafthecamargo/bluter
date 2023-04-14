@@ -8,6 +8,7 @@ import logo from "./img/bluter.svg";
 import arrow from "./img/arrow.svg";
 import heart from "./img/heart.svg";
 import firma from "./img/firma.png";
+import Desarrollo from "./componentes/Desarrollo";
 
 function App() {
 
@@ -27,7 +28,7 @@ function App() {
                 <img className='barra-logo' src={logo} alt='bluter'></img>
                 <Link to="/">Inicio</Link>
                 <Link to="/acerca-de">Acerca de</Link>
-                <Link to="/contacto">Contacto</Link>
+                <Link to="/contacto">Nosotros</Link>
             </div>
             <button onClick={signin} className='iniciasesion'>Inicia Sesión</button>
             <button onClick={login} className='registrate'>Regístrate</button>
@@ -59,10 +60,26 @@ function App() {
         </div>
 
         <div className='d2'>
+            <div className='d0001'>
+                <h2>Nosotros</h2>
+            </div>
+
+                    <div className='div1'>
+                        <Desarrollo nombre = 'Jafthe Camargo' imagen='jafthe.jpg'/>
+                    </div>
+                    <div className='div2'>
+                        <Desarrollo nombre = 'Itzel Ramírez' imagen='itzel.jpg'/>
+                    </div>
+                    <div className='div3'>
+                        <Desarrollo nombre = 'Antonio Martínez'imagen='antonio.jpg'/>
+                    </div>
+                    <div className='div4'>
+                        <Desarrollo nombre = 'Ángel Vargas'imagen='angel.jpg'/>
+                    </div>
 
             <div className='d-foot'>
                 <img className='f-img' src={logo} alt='bluter'></img>
-                <a className='f-text'>© 2022 UNIVCON Todos los derechos reservados.</a>
+                <a className='f-text'>© 2023 BLUTER Todos los derechos reservados.</a>
                 <a className='f-policies' href='/'>Política de Privacidad</a>
             </div>
         </div>

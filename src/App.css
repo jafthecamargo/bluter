@@ -120,6 +120,42 @@ h2 {
   width: 39%;
 }
 
+.d0001 {
+  position: relative;
+  top: 70px;
+  left: 545px;
+  width: 100px;
+  height: max-content;
+}
+
+.div1 {
+  position: relative;
+  top: 130px;
+  left: 60px;
+  width: 0%;
+}
+
+.div2 {
+  position: relative;
+  top: 130px;
+  left: 370px;
+  width: 0%;
+}
+
+.div3 {
+  position: relative;
+  top: 130px;
+  left: 670px;
+  width: 0%;
+}
+
+.div4 {
+  position: relative;
+  top: 130px;
+  left: 970px;
+  width: 0%;
+}
+
 .d2 {
   position: relative;
   height: 650px;
@@ -154,7 +190,7 @@ h2 {
 
 .f-policies {
   position:absolute;
-  left: 750px;
+  left: 735px;
   bottom: 0;
   font-size: 13px;
   font-weight: 300;
@@ -293,26 +329,7 @@ tr:hover {
   scale: 1.03;
 }
 
-.div1 {
-  position: static;
-  top: 50px;
-  left: 40px;
-  width: max-content;
-}
 
-.div2 {
-  position: static;
-  top: -150px;
-  left: 385px;
-  width: max-content;
-}
-
-.div3 {
-  position: static;
-  top: -350px;
-  left: 740px;
-  width: max-content;
-}
 
 .div5 {
   position: static;

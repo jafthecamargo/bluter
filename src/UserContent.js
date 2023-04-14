@@ -1,6 +1,6 @@
 import React from "react";
 import './App.css';
-import foot from "./img/foot.png";
+import logo from "./img/bluter.svg";
 import Pregunta from "./componentes/Pregunta";
 
 function UserContent() {
@@ -23,7 +23,7 @@ function UserContent() {
             </div>
             <Pregunta />
             <div className='div6'>
-                <img className='foot' src={foot} alt='univcon'></img>
+                <img className='f-img' src={logo} alt='bluter'></img>
                 <a className='f-text'>© 2022 UNIVCON Todos los derechos reservados.</a>
                 <a className='f-policies' href='#inicio'>Política de Privacidad.</a>
             </div>

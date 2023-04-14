@@ -1,17 +1,9 @@
 .card {
-    width: 240px;
-    height: 200px;
-    background: #ffffff;
-    justify-content: space-evenly;
-}
-
-.card-info {
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 30px;
-    left: 12px;
+    left: 30px;
     gap: 10px;
 }
 
@@ -19,16 +11,13 @@
     --size: 200px;
     width: var(--size);
     height: var(--size);
-    border-radius: 20px;
-    transition: all .5s;
-}
-
-.card-img:hover {
-    scale: 1.02;
+    border-radius: 100px;
 }
 
 .text-body {
-    font-size: 17px;
+    position: relative;
+    top: 10px;
+    font-size: 20px;
     text-align: center;
     color: black;
     font-weight: 400;
@@ -43,8 +32,9 @@
 .text-title {
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
-    font-size: 18px;
-    color: #6C63FF;
+    font-weight: 500;
+    font-size: 20px;
+    color: #B03D47;
     letter-spacing: 0.05rem;
     transition: all .5s;
 }

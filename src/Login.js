@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import './App.css';
-import foot from "./img/foot.png";
+import logo from "./img/bluter.svg";
 import Swal from "sweetalert2";
 
 function Login(props) {
@@ -80,7 +80,7 @@ function Login(props) {
                     (<><a className='text-2'>Si aún no tienes una cuenta.</a>
                     <button id='registrate' className='extra-2' onClick={() => setIsRegistered(!isRegistered)}>Regístrate</button></>)}
             </div>
-            <img className='foot-1' src={foot} alt='univcon'></img>
+            <img className='f-img' src={logo} alt='bluter'></img>
             <a className='home' href='/'>Regresar a Inicio ></a>
         </div>
     );

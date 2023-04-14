@@ -1,7 +1,6 @@
 import React, {useEffect} from "react";
 import '../styles/Pregunta.css';
 import Swal from "sweetalert2";
-import match from '../img/Match.svg';
 
 function Pregunta() {
 
@@ -15,7 +14,6 @@ function Pregunta() {
             timer: 10000,
             allowOutsideClick: false,
             timerProgressBar: true,
-            imageUrl: match,
             imageWidth: 430,
             imageHeight: 230,
             imageAlt: 'Match Image',
