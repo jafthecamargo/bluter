@@ -55,8 +55,8 @@ function Login(props) {
     }
 
     return (
-        <div className='d0'>
-            <div className='div1'>
+        <div className='d00'>
+            <div className='div10'>
                 {isRegistered ?
                 (<h1 className='i-r'>Regístrate</h1>) :
                 (<h1 className='i-r2'>Inicia Sesión</h1>)}

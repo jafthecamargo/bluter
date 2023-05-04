@@ -95,7 +95,7 @@ h2 {
 .d001 {
   position: relative;
   top: 190px;
-  left: 470px;
+  left: 580px;
   width: 720px;
   height: max-content;
 }
@@ -123,7 +123,7 @@ h2 {
 .d0001 {
   position: relative;
   top: 70px;
-  left: 545px;
+  left: 620px;
   width: 100px;
   height: max-content;
 }
@@ -131,28 +131,28 @@ h2 {
 .div1 {
   position: relative;
   top: 130px;
-  left: 60px;
+  left: 150px;
   width: 0%;
 }
 
 .div2 {
   position: relative;
   top: 130px;
-  left: 370px;
+  left: 450px;
   width: 0%;
 }
 
 .div3 {
   position: relative;
   top: 130px;
-  left: 670px;
+  left: 730px;
   width: 0%;
 }
 
 .div4 {
   position: relative;
   top: 130px;
-  left: 970px;
+  left: 1020px;
   width: 0%;
 }
 
@@ -175,13 +175,13 @@ h2 {
 .f-img {
   position: absolute;
   bottom: 40px;
-  left: 600px;
+  left: 660px;
   width: 8%;
 }
 
 .f-text {
   position: absolute;
-  left: 430px;
+  left: 490px;
   bottom: 0;
   font-size: 13px;
   font-weight: 300;
@@ -190,7 +190,7 @@ h2 {
 
 .f-policies {
   position:absolute;
-  left: 735px;
+  left: 800px;
   bottom: 0;
   font-size: 13px;
   font-weight: 300;
