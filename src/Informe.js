@@ -1,4 +1,6 @@
 import React, {useEffect} from "react";
+import { app } from "./fb";
+import { getFirestore, getDocs, collection, query, where } from "firebase/firestore";
 import './App.css';
 import logo from "./img/bluter.svg";
 import Swal from "sweetalert2";
@@ -7,20 +9,21 @@ function Informe() {
 
     const[data, setData] = React.useState([]);
 
-    function test() {
-        window.location.href = '/test';
-    }
-    function inicio() {
-        window.location.href = '/';
+    const uid = app.auth().currentUser.email;
+
+    function form() {
+        window.location.href = '/formulario';
     }
 
     const cerrarSesion = () => {
+        app.auth().signOut();
         cerrar();
     }
 
     const cerrar = () => {
         Swal.fire({
             title: "¡Sesión cerrada con éxito!",
+            text: app.auth().currentUser.email,
             icon: "success",
             timer: 1500,
             showConfirmButton: false,
@@ -28,39 +31,28 @@ function Informe() {
         });
     }
 
+    useEffect(() => {
+        const querydb = getFirestore();
+        const queryCollection = collection(querydb, "informes");
+        let queryFilter;
+        if (app.auth().currentUser.email === uid) {
+            queryFilter = query(queryCollection, where('email', '==', uid));
+        } else {
+            queryFilter = queryCollection;
+        }
+        getDocs(queryFilter)
+            .then(res => setData(res.docs.map(informe => ({id: informe.id, email: informe.data().email, ...informe.data()}))))
+    }, [uid]);
+
+
     return (
-        <div className='d0'>
+        <div>
             <div className='d00'>
-                <h2 className='text-inf'>INFORME</h2>
-                <table className='universidades'>
-                    <tr className='h3'>UNIVERSIDADES</tr>
-                    <tbody className='uni'>
-                    {data.map(data => <tr>{data.unv1}</tr>)}
-                    {data.map(data => <tr>{data.unv2}</tr>)}
-                    {data.map(data => <tr>{data.unv3}</tr>)}
-                    {data.map(data => <tr>{data.unv4}</tr>)}
-                    {data.map(data => <tr>{data.unv5}</tr>)}
-                    </tbody>
-                </table>
-                <table className='extras'>
-                    <tbody>
-                    <div className='usuario'>
-                    <tr className='h3'>USUARIO</tr>
-                    </div>
-                    <div className='area'>
-                    <tr className='h3'>ÁREA</tr>
-                    {data.map(data => <tr>{data.area}</tr>)}
-                    </div>
-                    </tbody>
-                </table>
+                <img className='f-img-ini' src={logo} alt='bluter'></img>
+                <p className='user'>{app.auth().currentUser.email}</p>
+                <button className='cerrar' onClick={cerrarSesion}>Cerrar Sesión</button>
             </div>
-            <button className='rt' onClick={test}>Realizar Test</button>
-            <button className='cerrar' onClick={cerrarSesion}>Cerrar Sesión</button>
-            <div className='div5'>
-                <img className='f-img' src={logo} alt='bluter'></img>
-                <a className='f-text'>© 2022 UNIVCON Todos los derechos reservados.</a>
-                <a className='f-policies' onClick={inicio}>Política de Privacidad.</a>
-            </div>
+            <button className='form' onClick={form}>Formulario</button>
         </div>
     );
 }

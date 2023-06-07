@@ -1,7 +1,103 @@
+/*************************************************** General ***************************************************/
+
 .d00 {
   position: relative;
   height: 100%;
 }
+
+h2 {
+  font-size: 45px;
+  font-weight: 600;
+  line-height: 50px;
+  color: #B03D47;
+}
+
+.f-img {
+  position: absolute;
+  left: 655px;
+  width: 8%;
+  cursor: pointer;
+}
+
+/*************************************************** Barra ***************************************************/
+
+.barra-logo {
+  position: relative;
+  width: 23%;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  left: 100px;
+  justify-content: space-between;
+  align-items: center;
+  color: #000000;
+  height: 100px;
+  width: 30%;
+}
+
+a {
+  position: relative;
+  left: 50px;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-size: 14px;
+  font-weight: 400;
+  transition: all .3s;
+}
+
+a:hover {
+  scale: 1.02;
+  cursor: pointer;
+}
+
+.iniciasesion {
+  position: absolute;
+  top: 30px;
+  right: 270px;
+  width: 150px;
+  height: 40px;
+  z-index: 2;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: black;
+  background-color: white;
+  font-weight: 400;
+  border-color: white;
+  border-style: solid;
+  transition: all .3s;
+}
+
+.iniciasesion:hover {
+  scale: 1.05;
+  cursor: pointer;
+}
+
+.registrate {
+  position: absolute;
+  top: 30px;
+  right: 100px;
+  width: 150px;
+  height: 40px;
+  z-index: 2;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: white;
+  background-color: black;
+  font-weight: 400;
+  border-color: black;
+  border-style: solid;
+  transition: all .3s;
+}
+
+.registrate:hover {
+  cursor: pointer;
+  scale: 1.05;
+}
+
+/*************************************************** App ***************************************************/
 
 .d0 {
   position: relative;
@@ -16,13 +112,6 @@
   left: 100px;
   width: 450px;
   height: max-content;
-}
-
-h2 {
-  font-size: 45px;
-  font-weight: 600;
-  line-height: 50px;
-  color: #B03D47;
 }
 
 .d02 {
@@ -60,12 +149,6 @@ h2 {
   border-color: white;
   border-style: solid;
   background-color: white;
-  transition: all .3s;
-}
-
-.boton1:hover {
-  scale: 1.02;
-  cursor: pointer;
 }
 
 .arrow {
@@ -73,6 +156,12 @@ h2 {
   top: 204px;
   left: 110px;
   height: 3%;
+  transition: all .3s;
+}
+
+.arrow:hover {
+  scale: 1.10;
+  cursor: pointer;
 }
 
 .d1 {
@@ -172,13 +261,6 @@ h2 {
   width: 100%;
 }
 
-.f-img {
-  position: absolute;
-  bottom: 40px;
-  left: 660px;
-  width: 8%;
-}
-
 .f-text {
   position: absolute;
   left: 490px;
@@ -190,7 +272,7 @@ h2 {
 
 .f-policies {
   position:absolute;
-  left: 800px;
+  left: 792px;
   bottom: 0;
   font-size: 13px;
   font-weight: 300;
@@ -200,201 +282,65 @@ h2 {
 
 .f-policies:hover {
   cursor: pointer;
-  scale: 1.02;
   text-decoration: underline;
 }
 
+/*************************************************** Login ***************************************************/
 
-
-
-
-
-
-
-
-
-.h3 {
-  position: static;
-  font-size: 18px;
-  font-weight: 700;
-  color: black;
-  transition: all .5s;
+.fondo {
+  position:absolute;
+  height: 100%;
+  width: 100%;
+  background-color: red;
 }
 
-.h3:hover {
-  scale: 1.01;
+.div10 {
+  position: relative;
+  top: 65px;
+  left: 480px;
+  height: 600px;
+  width: 480px;
+  background-color: white;
 }
 
-tr {
-  transition: all .5s;
+.div11 {
+  position: absolute;
+  top: 60px;
+  left: 100px;
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  cursor: pointer;
 }
 
-tr:hover {
-  scale: 1.01;
+.back {
+  position: absolute;
+  top: 13px;
+  left: 13px;
+  width: 50%;
+  cursor: pointer;
 }
 
-.text-p {
-  position: static;
-  top: 30px;
-  left: 10px;
-  text-align: center;
-  font-size: 15px;
-  font-weight: 400;
-  color: #636363;
-  transition: all .5s;
+.f-img1 {
+  position: absolute;
+  top: 140px;
+  left: 655px;
+  width: 9%;
 }
 
-.text-p:hover {
-  scale: 1.003;
-}
-
-
-
-.p0 {
-  position: static;
-  font-size: 12px;
-  text-align: justify;
-  top: -399px;
-  left: 749px;
-  height: max-content;
-  width: 518px;
-  color: #303030;
-  padding: 20px 0 0 0;
-}
-
-.d4{
-  position: static;
-  padding-top: 10px;
-  top: 50px;
-  left: 150px;
-  width: 950px;
-  height: 69%;
-  padding-bottom: 60px;
-}
-
-.bienvenido {
-  position: static;
+.ini {
+  position: relative;
+  left: 180px;
   top: 130px;
-  left: 395px;
-  width: max-content;
-}
-
-.rt {
-  position: static;
-  top: 165px;
-  left: 750px;
-  border-radius: 10px;
-  width: 200px;
-  height: 40px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  color: white;
-  background-color: #6C63FF;
-  font-weight: 500;
-  border-color: #6C63FF;
-  border-style: solid;
-  transition: all .3s;
-}
-
-.rt:hover {
-  background-color: white;
-  border-color: #6C63FF;
-  color: #6C63FF;
-  cursor: pointer;
-  scale: 1.03;
-}
-
-.cerrar {
-  position: static;
-  top: 165px;
-  left: 765px;
-  border-radius: 10px;
-  width: 200px;
-  height: 40px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  color: white;
-  background-color: #cb2f2f;
-  font-weight: 500;
-  border-color: #cb2f2f;
-  border-style: solid;
-  transition: all .3s;
-}
-
-.cerrar:hover {
-  background-color: white;
-  border-color: #cb2f2f;
-  color: #cb2f2f;
-  cursor: pointer;
-  scale: 1.03;
-}
-
-
-
-.div5 {
-  position: static;
-  top: 235px;
-  height: 70px;
-}
-
-.div6 {
-  position: static;
-  top: 6270px;
-  height: 70px;
-}
-
-
-
-.text-nos{
-  position: static;
-  left: 345px;
-  width: max-content;
-}
-
-.text-inf{
-  position: static;
-  left: 370px;
-  width: max-content;
-}
-
-.text-test {
-  position: static;
-  left: 420px;
-  width: max-content;
-}
-
-.foot-1 {
-  position: static;
-  left: 525px;
-  top: -110px;
-  width: 17%;
-}
-
-.home {
-  position: static;
-  left: 20px;
-  top: 330px;
-  width: 17%;
-}
-
-.home:hover {
-  cursor: pointer;
-  color: #6C63FF;
-}
-
-.i-r {
-  position: relative;
-  left: 550px;
-  top: 110px;
   width: max-content;
   font-weight: 500;
   text-align: center;
 }
 
-.i-r2 {
+.reg {
   position: relative;
-  left: 545px;
-  top: 110px;
+  left: 190px;
+  top: 130px;
   width: max-content;
   font-weight: 500;
   text-align: center;
@@ -402,18 +348,18 @@ tr:hover {
 
 .correo {
   position: relative;
-  top: 150px;
-  left: 422px;
+  top: 160px;
+  left: 40px;
   font-weight: 400;
   font-size: 15px;
 }
 
 .mail {
   position: relative;
-  top: 190px;
-  left: 370px;
-  height: 35px;
-  width: 350px;
+  top: 205px;
+  left: -18px;
+  height: 40px;
+  width: 400px;
   background-color: #f1f1f1;
   border-color: #f1f1f1;
   border-style: solid;
@@ -426,8 +372,8 @@ tr:hover {
 
 .contraseña {
   position: relative;
-  top: 200px;
-  left: 422px;
+  top: 230px;
+  left: 40px;
   font-weight: 400;
   font-size: 15px;
 }
@@ -435,9 +381,9 @@ tr:hover {
 .pass {
   position: relative;
   top: 240px;
-  left: 335px;
-  height: 35px;
-  width: 350px;
+  left: 33px;
+  height: 40px;
+  width: 400px;
   background-color: #f1f1f1;
   border-color: #f1f1f1;
   border-style: solid;
@@ -447,181 +393,148 @@ tr:hover {
   padding: 0 0 0 10px;
 }
 
-.inicia {
-  position: static;
-  left: 425px;
-  top: 280px;
-  border-radius: 5px;
-  width: 80%;
-  height: 40px;
+.sub {
+  position: absolute;
+  left: 33px;
+  top: 420px;
+  width: 415px;
+  height: 45px;
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   color: white;
-  background-color: #6C63FF;
+  background-color: #B03D47;
   font-weight: 500;
-  border-color: #6C63FF;
+  border-color: #B03D47;
   border-style: solid;
   transition: all .3s;
 }
 
-.inicia:hover {
+.sub:hover {
   background-color: #ffffff;
-  border-color: #6C63FF;
-  color: #6C63FF;
-  cursor: pointer;
-}
-
-.extra-1 {
-  position: static;
-  top: 375px;
-  left: 637px;
-  width: max-content;
-  height: 20px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 13px;
-  color: #6C63FF;
-  background-color: white;
-  border-color: white;
-  border-style: solid;
-  text-decoration: underline;
-}
-
-.extra-1:hover {
-  color: #483dd3;
-  cursor: pointer;
-}
-
-.extra-2 {
-  position: relative;
-  top: 375px;
-  left: 655px;
-  width: max-content;
-  height: 20px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 13px;
-  color: #6C63FF;
-  background-color: white;
-  border-color: white;
-  border-style: solid;
-  text-decoration: underline;
-}
-
-.extra-2:hover {
-  color: #483dd3;
+  border-color: #B03D47;
+  color: #B03D47;
   cursor: pointer;
 }
 
 .text-1 {
-  position: relative;
-  top: 400px;
-  left: 330px;
+  position: absolute;
+  top: 530px;
+  left: 115px;
   font-weight: 400;
   font-size: 13px;
   color: #636363;
+}
+
+.extra-1 {
+  position: absolute;
+  top: 528px;
+  left: 272px;
+  width: max-content;
+  height: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: #B03D47;
+  background-color: white;
+  border-color: white;
+  border-style: solid;
+}
+
+.extra-1:hover {
+  color: #B03D47;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .text-2 {
-  position: relative;
-  top: 400px;
-  left: 335px;
+  position: absolute;
+  top: 530px;
+  left: 100px;
   font-weight: 400;
   font-size: 13px;
   color: #636363;
 }
 
-.universidades{
-  position: static;
-  top: 95px;
-  left: -30px;
-  font-weight: 500;
-  font-size: 17px;
-  line-height: 30px;
+.extra-2 {
+  position: absolute;
+  top: 528px;
+  left: 287px;
+  width: max-content;
+  height: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: #B03D47;
+  background-color: white;
+  border-color: white;
+  border-style: solid;
 }
 
-.uni {
-  position: relative;
-  top: 10px;
-  left: -1px;
-  color: #636363;
+.extra-2:hover {
+  color: #B03D47;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
-.usuario {
-  position: relative;
-  font-weight: 500;
-  font-size: 17px;
-  color: #636363;
-  line-height: 40px;
-}
+/*************************************************** Informe ***************************************************/
 
-.area {
-  position: relative;
+.f-img-ini {
+  position: absolute;
   top: 30px;
-  font-weight: 500;
-  font-size: 17px;
-  color: #636363;
-  line-height: 40px;
+  left: 100px;
+  width: 7.5%;
 }
 
-.extras {
-  position: static;
-  top: 90px;
-  left: 595px;
-  font-weight: 500;
-  font-size: 17px;
-  color: #636363;
-  line-height: 40px;
+.user {
+  position: absolute;
+  top: 35px;
+  left: 820px;
 }
 
-.gp {
-  position: relative;
-  left: 150px;
-  top: -240px;
-  width: 350px;
-  transition: all .5s;
-}
-
-.gp:hover {
-  transform: scale(1.01);
-}
-
-.div31 {
-  position: static;
-  top: 100px;
-  left: 680px;
-  width: 500px;
-}
-
-.p22 {
-  font-size: 16px;
+.cerrar {
+  position: absolute;
+  top: 25px;
+  left: 1100px;
+  width: 170px;
+  height: 45px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: white;
+  background-color: black;
   font-weight: 400;
-  line-height: 30px;
-  color: #636363;
-  text-align: left;
-  transition: all .5s;
+  border-color: black;
+  border-style: solid;
+  transition: all .3s;
 }
 
-.p22:hover {
-  scale: 1.005;
+.cerrar:hover {
+  background-color: white;
+  border-color: black;
+  color: black;
+  cursor: pointer;
+  scale: 1.01;
 }
 
-.p21 {
-  font-size: 16px;
+.form {
+  position: absolute;
+  top: 80px;
+  left: 1100px;
+  width: 170px;
+  height: 45px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: white;
+  background-color: black;
   font-weight: 400;
-  color: #636363;
-  text-align: center;
-  line-height: 30px;
-  transition: all .5s;
+  border-color: black;
+  border-style: solid;
+  transition: all .3s;
 }
 
-.p21:hover {
-  scale: 1.005;
-}
-
-.div32 {
-  position: static;
-  top: -110px;
-  left: 350px;
-  width: 650px;
+.form:hover {
+  background-color: white;
+  border-color: black;
+  color: black;
+  cursor: pointer;
+  scale: 1.01;
 }
