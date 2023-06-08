@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import {app} from "./fb";
-import './App.css';
+import './styles/App.css';
 import Informe from "./Informe";
 import Login from "./Login";
 

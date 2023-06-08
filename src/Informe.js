@@ -1,7 +1,8 @@
 import React, {useEffect} from "react";
 import { app } from "./fb";
 import { getFirestore, getDocs, collection, query, where } from "firebase/firestore";
-import './App.css';
+import './styles/App.css';
+import './styles/Informe.css';
 import logo from "./img/bluter.svg";
 import Swal from "sweetalert2";
 

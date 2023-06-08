@@ -1,13 +1,13 @@
 import React, { useRef } from "react";
 import {Link} from "react-router-dom";
-import './App.css';
+import './styles/App.css';
 import img1 from './img/img1.jpg';
 import img2 from './img/img2.jpg';
 import logo from "./img/bluter.svg";
 import arrow from "./img/arrow.svg";
 import heart from "./img/heart.svg";
 import firma from "./img/firma.png";
-import Desarrollo from "./componentes/Desarrollo";
+import Marco from "./componentes/Marco";
 
 function App() {
 
@@ -31,7 +31,7 @@ function App() {
     }
 
     function login() {
-        window.location.href = '/signin';
+        window.location.href = '/login';
     }
 
     return (
@@ -79,16 +79,16 @@ function App() {
                 </div>
 
                     <div className='div1'>
-                        <Desarrollo nombre = 'Jafthe Camargo' imagen='jafthe.jpg'/>
+                        <Marco nombre = 'Jafthe Camargo' imagen='jafthe.jpg'/>
                     </div>
                     <div className='div2'>
-                        <Desarrollo nombre = 'Itzel Ramírez' imagen='itzel.jpg'/>
+                        <Marco nombre = 'Itzel Ramírez' imagen='itzel.jpg'/>
                     </div>
                     <div className='div3'>
-                        <Desarrollo nombre = 'Antonio Martínez'imagen='antonio.jpg'/>
+                        <Marco nombre = 'Antonio Martínez'imagen='antonio.jpg'/>
                     </div>
                     <div className='div4'>
-                        <Desarrollo nombre = 'Ángel Vargas'imagen='angel.jpg'/>
+                        <Marco nombre = 'Ángel Vargas'imagen='angel.jpg'/>
                     </div>
 
                 <div className='d-foot'>
