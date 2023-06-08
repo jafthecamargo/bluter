@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import {app} from "./fb";
 import './styles/App.css';
-import Informe from "./Informe";
+import Principal from "./Principal";
 import Login from "./Login";
 
 function SignIn() {
@@ -14,7 +14,7 @@ function SignIn() {
         });
     },[] )
 
-    return <> {user ? <Informe /> : <Login setUser={setUser} />}</>;
+    return <> {user ? <Principal /> : <Login setUser={setUser} />}</>;
 
 }
 

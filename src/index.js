@@ -6,7 +6,7 @@ import App from './App';
 import Login from './Login';
 import SignIn from './SignIn';
 import Formulario from "./Formulario";
-import Informe from "./Informe";
+import Principal from "./Principal";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,7 +16,7 @@ root.render(
           <Route path='app' element={<App />} />
           <Route path='login' element={<Login />} />
           <Route path='signin' element={<SignIn />} />
-          <Route path='informe' element={<Informe />} />
+          <Route path='informe' element={<Principal />} />
           <Route path='formulario' element={<Formulario />} />
       </Routes>
   </BrowserRouter>

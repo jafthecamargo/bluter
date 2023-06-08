@@ -48,9 +48,6 @@ function Login(props) {
         e.preventDefault();
         const email = e.target.email.value;
         const pass = e.target.password.value;
-        const date = e.target.date.value;
-        const peso = e.target.peso.value;
-        const id = e.target.id.value;
         console.log(email,pass);
 
         if(isRegistered) {
