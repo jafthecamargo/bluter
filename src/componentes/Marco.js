@@ -3,10 +3,10 @@ import '../styles/Marco.css';
 
 function Marco(props) {
     return (
-        <div className="card">
-            <img className="card-img" src={require(`../img/${props.imagen}`)} alt='foto'></img>
-            <p className="text-body">{props.nombre}</p>
-            <p className="text-title">CEO</p>
+        <div className='card1'>
+            <img className='card-img1' src={require(`../img/${props.imagen}`)} alt='foto'></img>
+            <p className='text-body1'>{props.nombre}</p>
+            <p className='text-title1'>CEO</p>
         </div>
     );
 }

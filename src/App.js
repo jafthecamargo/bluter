@@ -52,11 +52,12 @@ function App() {
                 <div className='d02'>
                     <p className='txt1'>Únete y ayuda a salvar vidas. Regístrate como donante voluntario y haz solicitudes de donación en caso de necesitar una transfusión.</p>
                 </div>
-                <button className='boton1'>Regístrate ahora</button>
-                <img className='arrow' src={arrow} alt='arrow' onClick={signin}></img>
+                <div className='boton1' onClick={signin}>
+                    <p>Regístrate ahora</p>
+                    <img className='arrow' src={arrow} alt='arrow'></img>
+                </div>
                 <img className='img1' src={img1} alt='img1'></img>
             </div>
-
             <div className='d1' ref={acerca}>
                 <img className='img2' src={img2} alt='img2'></img>
                 <div className='d001'>

@@ -110,7 +110,7 @@ function Login(props) {
                         <img className='imgg' src={imgg} alt='img-bluter'></img>
                         <form onSubmit={submitHandler}>
                                 <div className='form-group3'>
-                                    <label className='cc'>Correo</label>
+                                    <label className='c'>Correo</label>
                                     <input className='ccc' type='email' id='email' placeholder='Ingresa tu correo electrónico'/>
                                 </div>
                                 <div className='form-group4'>

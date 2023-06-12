@@ -11,6 +11,7 @@
   height: 610px;
   width: 480px;
   background-color: white;
+  box-shadow: 10px 10px 64px 10px rgba(0, 0, 0, 0.2)
 }
 
 .div11 {
@@ -20,6 +21,7 @@
   height: 50px;
   width: 50px;
   background-color: white;
+  box-shadow: 10px 10px 64px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 
@@ -164,16 +166,17 @@
   height: 610px;
   width: 1100px;
   background-color: white;
+  box-shadow: 10px 10px 64px 10px rgba(0, 0, 0, 0.2)
 }
 
 .imgg {
-  position:absolute;
+  position: absolute;
   height: 100%;
   width: 40%;
   object-fit: cover;
 }
 
-.cc {
+.c {
   position: relative;
   top: 30px;
   left: 488px;
