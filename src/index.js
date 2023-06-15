@@ -7,6 +7,7 @@ import Login from './Login';
 import SignIn from './SignIn';
 import Formulario from "./Formulario";
 import Principal from "./Principal";
+import Correo from './Correo'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +19,7 @@ root.render(
           <Route path='signin' element={<SignIn />} />
           <Route path='informe' element={<Principal />} />
           <Route path='formulario' element={<Formulario />} />
+          <Route path='correo' element={<Correo/>}/>
       </Routes>
   </BrowserRouter>
 );
