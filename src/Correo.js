@@ -18,8 +18,16 @@ function Correo() {
       },
       body: JSON.stringify(emailData),
     })
-      .then((response) => {})
-      .catch((error) => {});
+      .then((response) => {
+        if (response.ok) {
+          console.log("Correo enviado exitosamente");
+        } else {
+          console.error("Error al enviar el correo");
+        }
+      })
+      .catch((error) => {
+        console.error("Error en la solicitud", error);
+      });
   }
 
   return (
