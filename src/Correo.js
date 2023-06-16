@@ -1,46 +1,37 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 function Correo() {
-  const [correo, setCorreo] = useState("");
+  const [correoDestino, setCorreoDestino] = useState("");
   const [cuerpo, setCuerpo] = useState("");
 
-  function sendEmail() {
-    const emailData = {
-      to: "angelvargasvelez21@gmail.com",
-      subject: "¡Hola soy una prueba!",
-      content: "Este es un correo electronico de prueba.",
+  const enviarCorreo = () => {
+    const datosCorreo = {
+      destino: correoDestino,
+      cuerpo: cuerpo,
     };
 
-    fetch("http://localhost:3001/api/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(emailData),
-    })
+    axios
+      .post("http://localhost:3001/enviar-correo", datosCorreo)
       .then((response) => {
-        if (response.ok) {
-          console.log("Correo enviado exitosamente");
-        } else {
-          console.error("Error al enviar el correo");
-        }
+        console.log(response.data.message);
       })
       .catch((error) => {
-        console.error("Error en la solicitud", error);
+        console.log("Error al enviar el correo: ", error);
       });
-  }
+  };
 
   return (
     <>
-      <form onSubmit={sendEmail}>
+      <form onSubmit={enviarCorreo}>
         <div>
           <label>
             Correo:
             <input
               type="email"
-              value={correo}
+              value={correoDestino}
               onChange={(e) => {
-                setCorreo(e.target.value);
+                setCorreoDestino(e.target.value);
               }}
             />
           </label>

@@ -1,30 +1,37 @@
 const express = require("express");
-const cors = require('cors')
+const cors = require("cors");
 const app = express();
 
 const nodemailer = require("nodemailer");
 
-app.use(cors({origin:'http://localhost:3000'}));
+app.use(cors({ origin: "http://localhost:3000" }));
 app.use(express.json()); //middleware para analizar el cuerpo de la solicitud como JSON
 
 app.post("/enviar-correo", (req, res) => {
+  console.log("Cuerpo de la solicitud: ", req.body);
   const { destino, asunto } = req.body;
 
   //transporte de correo
   const transporter = nodemailer.createTransport({
     service: "Gmail",
+    host:"smtp.gmail.com",
+    port:465,
+    secure:true,
     auth: {
       user: "proobmail17@gmail.com",
       pass: "ProobMail_1",
     },
+    tls:{
+      rejectUnauthorized:false
+    }
   });
 
   //configura contenido del correo
 
   const mailOptions = {
-    from: "angelvargasvelez@gmail.com",
-    to: "jethrocamargo@gmail.com",
-    subject: "Blutter correo de prueba",
+    from: "proobmail17@gmail.com",
+    to: destino,
+    subject: asunto,
     text: "Esta es una prueba de correo de blutter",
   };
 
