@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router-dom'
 import "./styles/Formulario.css";
 
 const Formulario = () => {
+
   const navigate = useNavigate();
   /**useState para almacenar los valores del formulario, como valor inicial estamos creando un
    * objeto con tres propiedades todos vacios, el objeto se llama 'values'

@@ -1,6 +1,5 @@
 import React from "react";
 import { app } from "./fb";
-import './styles/App.css';
 import './styles/Login.css';
 import logo from "./img/bluter.svg";
 import arrow from "./img/arrow-left.svg";

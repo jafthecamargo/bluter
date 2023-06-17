@@ -34,6 +34,10 @@ function App() {
         window.location.href = '/login';
     }
 
+    function privacy() {
+        window.location.href = '/privacy';
+    }
+
     return (
         <div className='d00' id='inicio'>
 
@@ -58,6 +62,7 @@ function App() {
                 </div>
                 <img className='img1' src={img1} alt='img1'></img>
             </div>
+
             <div className='d1' ref={acerca}>
                 <img className='img2' src={img2} alt='img2'></img>
                 <div className='d001'>
@@ -95,7 +100,7 @@ function App() {
                 <div className='d-foot'>
                     <img onClick={inicioscroll} className='f-img' src={logo} alt='bluter'></img>
                     <p className='f-text'>© 2023 BLUTER Todos los derechos reservados.</p>
-                    <p className='f-policies' href='/'>Política de Privacidad</p>
+                    <p className='f-policies' onClick={privacy}>Política de Privacidad</p>
                 </div>
             </div>
 
