@@ -9,7 +9,7 @@ app.use(express.json()); //middleware para analizar el cuerpo de la solicitud co
 
 app.post("/enviar-correo", (req, res) => {
   console.log("Cuerpo de la solicitud: ", req.body);
-  const { destino, asunto } = req.body;
+  const { destino, asunto,texto } = req.body;
 
   //transporte de correo
   const transporter = nodemailer.createTransport({
@@ -18,8 +18,8 @@ app.post("/enviar-correo", (req, res) => {
     port:465,
     secure:true,
     auth: {
-      user: "proobmail17@gmail.com",
-      pass: "mrelqjrslxrmlzdn",
+      user: "blutercenter@gmail.com",
+      pass: "fnbexhbzukyaerty",
     },
     tls:{
       rejectUnauthorized:false
@@ -32,7 +32,7 @@ app.post("/enviar-correo", (req, res) => {
     from: "proobmail17@gmail.com",
     to: destino,
     subject: asunto,
-    text: "Esta es una prueba de correo de blutter",
+    text: texto,
   };
 
   //envia el correo

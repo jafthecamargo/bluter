@@ -3,12 +3,14 @@ import axios from 'axios';
 
 function Correo() {
   const [correo, setCorreo] = useState("");
-  const [cuerpo, setCuerpo] = useState("");
+  const [asunto, setAsunto] = useState("")
+  const [texto, setTexto] = useState("");
 
   const enviarCorreo = () => {
     const correoData = {
       destino: correo,
-      cuerpo: cuerpo
+      asunto:asunto,
+      texto: texto
     };
 
     axios
@@ -38,12 +40,23 @@ function Correo() {
         </div>
 
         <div>
+            <label>
+                Asunto del correo:
+                <input type="text"
+                value={asunto}
+                onChange={(e)=>{
+                    setAsunto(e.target.value)
+                }}/>
+            </label>
+        </div>
+
+        <div>
           <label>
             Cuerpo del correo:
             <textarea
-              value={cuerpo}
+              value={texto}
               onChange={(e) => {
-                setCuerpo(e.target.value);
+                setTexto(e.target.value);
               }}
             />
           </label>
