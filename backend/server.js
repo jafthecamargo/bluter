@@ -29,7 +29,7 @@ app.post("/enviar-correo", (req, res) => {
   //configura contenido del correo
 
   const mailOptions = {
-    from: "proobmail17@gmail.com",
+    from: "blutercenter@gmail.com",
     to: destino,
     subject: asunto,
     text: texto,

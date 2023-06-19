@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import axios from 'axios';
+/*import React, { useState } from "react";
 
 function Correo() {
   const [correo, setCorreo] = useState("");
@@ -70,4 +69,4 @@ function Correo() {
   );
 }
 
-export default Correo;
+export default Correo;*/
