@@ -9,21 +9,21 @@ app.use(express.json()); //middleware para analizar el cuerpo de la solicitud co
 
 app.post("/enviar-correo", (req, res) => {
   console.log("Cuerpo de la solicitud: ", req.body);
-  const { destino, asunto,texto } = req.body;
+  const { destino, asunto, texto } = req.body;
 
   //transporte de correo
   const transporter = nodemailer.createTransport({
     service: "Gmail",
-    host:"smtp.gmail.com",
-    port:465,
-    secure:true,
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
     auth: {
       user: "blutercenter@gmail.com",
       pass: "fnbexhbzukyaerty",
     },
-    tls:{
-      rejectUnauthorized:false
-    }
+    tls: {
+      rejectUnauthorized: false,
+    },
   });
 
   //configura contenido del correo
@@ -32,7 +32,8 @@ app.post("/enviar-correo", (req, res) => {
     from: "blutercenter@gmail.com",
     to: destino,
     subject: asunto,
-    text: texto,
+    //text: texto,
+    html: `<h1>${texto}</h1>`,
   };
 
   //envia el correo
@@ -50,4 +51,3 @@ app.post("/enviar-correo", (req, res) => {
 app.listen(3001, () => {
   console.log("Servidor en ejecucion en el puerto 3001");
 });
-
