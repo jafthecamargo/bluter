@@ -33,7 +33,7 @@ app.post("/enviar-correo", (req, res) => {
     to: destino,
     subject: asunto,
     //text: texto,
-    html: `<h1>${texto}</h1>`,
+    html: `<p>${texto}</p>`,
   };
 
   //envia el correo

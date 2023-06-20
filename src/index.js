@@ -21,7 +21,6 @@ root.render(
           <Route path='informe' element={<Principal />} />
           <Route path='formulario' element={<Formulario />} />
           <Route path='privacy' element={<Privacy/>}/>
-          <Route path='correo' element={<Correo/>}/>
       </Routes>
   </BrowserRouter>
 );

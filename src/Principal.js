@@ -44,6 +44,41 @@ function Principal() {
 
   const uid = app.auth().currentUser.email;
 
+  useEffect(() => {
+  const user = app.auth().currentUser;
+
+  if (user) {
+    const querydb = getFirestore();
+    const queryCollection = collection(querydb, "datos");
+    const queryFilter = query(queryCollection, where('email', '==', user.email));
+
+    getDocs(queryFilter)
+      .then((querySnapshot) => {
+        const userData = [];
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          // Accede a los datos necesarios del usuario
+          const name = data.name;
+          const peso = data.peso;
+          const date = data.date;
+          // ...
+          userData.push({
+            id: doc.id,
+            name,
+            peso,
+            date,
+            // ...
+          });
+        });
+        setData(userData);
+      })
+      .catch((error) => {
+        console.error("Error al obtener los datos: ", error);
+      });
+  }
+}, []);
+
+
   function form() {
     window.location.href = "/formulario";
   }
@@ -75,14 +110,20 @@ function Principal() {
   const postular = () => {
     Swal.fire({
       title: "Postular",
-      icon: "success",
-      timer: 1500,
-      showConfirmButton: false,
+      text: "¿Estás seguro que deseas postularte?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: 'Si',
+      showConfirmButton: true,
+      cancelButtonText: 'No',
       allowOutsideClick: false,
-    });
-    asunto = "BLUTER - POSTULACIÓN";
-    texto = "Te has postulado correctamente";
-    enviarCorreo();
+    }).then((result) => {
+      if (result.isConfirmed) {
+        asunto = "BLUTER - POSTULACIÓN";
+        texto = "Te has postulado correctamente";
+        enviarCorreo();
+      }
+    })
   };
 
   const cerrar = () => {
@@ -177,12 +218,14 @@ function Principal() {
           <p>Sexo:</p>
           <p>Peso:</p>
         </div>
-        <div className="info1">
-          <p>Jafthe</p>
+        {data.map((usuario) => (
+        <div className="info1" key={usuario.id}>
+          <p>{usuario.name}</p>
           <p>21</p>
           <p>Hombre</p>
           <p>56.5 kg</p>
         </div>
+        ))}
         <div className="t1">
           <TipoS tipo="A+" color="#BCDDF1" />
         </div>

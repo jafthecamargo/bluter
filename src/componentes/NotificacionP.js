@@ -30,30 +30,56 @@ function NotificacionOK(props) {
 
   const yes = () => {
     Swal.fire({
-      title: "Aceptada",
-      icon: "success",
-      timer: 1500,
-      showConfirmButton: false,
+      title: "Aceptar",
+      text: "¿Estás seguro que deseas aceptar la solicitud?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: 'Si',
+      showConfirmButton: true,
+      cancelButtonText: 'No',
       allowOutsideClick: false,
-    });
-
-    asunto = "BLUTER - ACEPTADA";
-    texto = "Tu solicitud fue correctamente aceptada";
-    enviarCorreo();
+    }).then((result) => {
+      if (result.isConfirmed) {
+        asunto = "BLUTER - ACEPTADA";
+        texto = "<h1>Itzel Ramírez</h1>\n\n" +
+            "Nos complace informarte que tu solicitud de donación de sangre ha sido aceptada.\n\nQueremos agradecerte por tu generosidad y disposición para ayudar a quienes más lo necesitan.";
+        enviarCorreo();
+        Swal.fire({
+          title: "Solictud aceptada",
+          icon: "success",
+          timer: 1500,
+          showConfirmButton: false,
+          allowOutsideClick: false,
+        });
+      }
+    })
   };
 
   const not = () => {
     Swal.fire({
-      title: "Rechazada",
-      icon: "error",
-      timer: 1500,
-      showConfirmButton: false,
+      title: "Rechazar",
+      text: "¿Estás seguro que deseas rechazar la solicitud?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: 'Si',
+      showConfirmButton: true,
+      cancelButtonText: 'No',
       allowOutsideClick: false,
-    });
-
-    asunto = "BLUTER - RECHAZADA";
-    texto = "Lamentablemente tu solicitud fue rechazada";
-    enviarCorreo();
+    }).then((result) => {
+      if (result.isConfirmed) {
+        asunto = "BLUTER - RECHAZADA";
+        texto = "<h1>Itzel Ramírez</h1>\n\n" +
+            "Lamentamos informarte que tu solicitud de donación de sangre ha sido rechazada.\n\nQueremos agradecerte sinceramente por tu disposición y deseo de contribuir a esta noble causa.";
+        enviarCorreo();
+        Swal.fire({
+          title: "Solictud rechazada",
+          icon: "success",
+          timer: 1500,
+          showConfirmButton: false,
+          allowOutsideClick: false,
+        });
+      }
+    })
   };
 
   return (

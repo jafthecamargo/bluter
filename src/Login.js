@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { app } from "./fb";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 import './styles/Login.css';
 import logo from "./img/bluter.svg";
 import arrow from "./img/arrow-left.svg";
@@ -7,13 +8,19 @@ import fondo from "./img/fondo.png";
 import imgg from "./img/img3.jpg";
 import Swal from "sweetalert2";
 
-
 function back() {
     window.location.href = '/';
 }
 function Login(props) {
 
     const [isRegistered, setIsRegistered] = React.useState(false);
+    const [curp, setCurp] = useState("");
+
+    const validarCurp = (curp) => {
+        // Expresión regular para validar el formato del CURP
+        const curpRegex = /^[A-Z]{4}\d{6}[HM][A-Z]{5}[0-9A-Z]{2}$/;
+        return curpRegex.test(curp);
+    };
 
     const crearUsuario = (email, pass) => {
         app
@@ -47,13 +54,47 @@ function Login(props) {
         e.preventDefault();
         const email = e.target.email.value;
         const pass = e.target.password.value;
-        console.log(email,pass);
 
-        if(isRegistered) {
+        if (isRegistered) {
+            const name = e.target.name.value;
+            const pass = e.target.password.value;
+            const date = e.target.date.value;
+            const peso = e.target.peso.value;
+            const curp = e.target.curp.value;
+            const ts = e.target.ts.value;
+
+            // Crea el usuario en Firebase Authentication
+            if (pass.length < 6) {
+                errorContraseña();
+                return;
+            }
+            if (!validarCurp(curp)) {
+                errorCurp();
+                return;
+            }
             crearUsuario(email, pass);
-        }
 
-        if(!isRegistered) {
+            const crearDocumento = async () => {
+                console.log("Creando documento");
+                const db = getFirestore();
+
+                try {
+                    const docRef = await addDoc(collection(db, "datos"), {
+                        name: name,
+                        email: email,
+                        pass: pass,
+                        date: date,
+                        peso: peso,
+                        curp: curp,
+                        ts: ts,
+                    });
+                    console.log("Documento creado con ID: ", docRef.id);
+                } catch (error) {
+                    console.error("Error al crear el documento: ", error);
+                }
+            };
+            crearDocumento();
+        } else {
             iniciarSesion(email, pass);
         }
     };
@@ -82,20 +123,36 @@ function Login(props) {
 
     const errorSesion = () => {
         Swal.fire({
-            title: "¡Error!",
-            text: "Usuario o contraseña incorrectos",
+            title: "Usuario o contraseña incorrectos",
             icon: "error",
-            button: "Aceptar",
+            confirmButtonText: "Reintentar",
             allowOutsideClick: false,
         });
     }
 
     const errorUsuario = () => {
         Swal.fire({
-            title: "¡Error!",
-            text: "El usuario ya existe",
+            title: "El usuario ya existe",
             icon: "error",
-            button: "Aceptar",
+            confirmButtonText: "Reintentar",
+            allowOutsideClick: false,
+        });
+    }
+
+    const errorContraseña = () => {
+        Swal.fire({
+            title: "La contraseña debe tener al menos 6 caracteres",
+            icon: "error",
+            confirmButtonText: "Reintentar",
+            allowOutsideClick: false,
+        });
+    }
+
+    const errorCurp = () => {
+        Swal.fire({
+            title: "CURP No Válido",
+            icon: "error",
+            confirmButtonText: "Reintentar",
             allowOutsideClick: false,
         });
     }
@@ -105,28 +162,51 @@ function Login(props) {
             <img className='fondo' src={fondo} alt='fondo-bluter'></img>
                {isRegistered ? (
                 <>
-                    <div className='div100'>
+                    <div className='div1000'>
                         <img className='imgg' src={imgg} alt='img-bluter'></img>
                         <form onSubmit={submitHandler}>
-                                <div className='form-group3'>
+                                <div className='form-group2'>
+                                    <label className='nnn'>Nombre</label>
+                                    <input className='name' type='text' id='name' placeholder='Ingresa tu nombre' required/>
                                     <label className='c'>Correo</label>
-                                    <input className='ccc' type='email' id='email' placeholder='Ingresa tu correo electrónico'/>
+                                    <input className='ccc' type='email' id='email' placeholder='Ingresa tu correo electrónico' required/>
                                 </div>
                                 <div className='form-group4'>
                                     <label className='con'>Contraseña</label>
-                                    <input className='conn' type='password' id='password' placeholder='Ingresa una contraseña' />
+                                    <input className='conn' type='password' id='password' placeholder='Ingresa una contraseña' required/>
                                 </div>
                                 <div className='form-group5'>
                                     <label className='fecha'>Fecha de Nacimiento</label>
-                                    <input className='date' type='date' id='date' />
+                                    <input className='date' type='date' id='date' required/>
                                 </div>
                                 <div className='form-group6'>
                                     <label className='pp'>Peso</label>
-                                    <input className='peso' type='number' id='peso' placeholder='Ingresa tu peso en Kg' />
+                                     <input
+                                         className='peso'
+                                         type='number'
+                                         id='peso'
+                                         placeholder='Ingresa tu peso en Kg'
+                                         step='0.01'
+                                         required
+                                     />
                                 </div>
                                 <div className='form-group7'>
-                                    <label className='id1'>Identificación Oficial</label>
-                                    <input className='id2' type='file' id='id' />
+                                    <label className='ts1'>Tipo de Sangre</label>
+                                    <select className='ts2' id='ts' defaultValue='' required>
+                                        <option value='' disabled>Selecciona tu tipo de sangre</option>
+                                        <option value='A+'>A+</option>
+                                        <option value='A-'>A-</option>
+                                        <option value='B+'>B+</option>
+                                        <option value='B-'>B-</option>
+                                        <option value='AB+'>AB+</option>
+                                        <option value='AB-'>AB-</option>
+                                        <option value='O+'>O+</option>
+                                        <option value='O-'>O-</option>
+                                    </select>
+                                </div>
+                                <div className='form-group8'>
+                                    <label className='id1'>CURP</label>
+                                    <input className='id2' type='text' id='curp' placeholder='Ingresa tu CURP' required/>
                                 </div>
                                 <button className='sub2' type='submit'>Registrarse</button>
                             </form>

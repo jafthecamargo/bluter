@@ -159,7 +159,7 @@
 
 /*Reg*/
 
-.div100 {
+.div1000 {
   position: relative;
   top: 60px;
   left: 170px;
@@ -176,10 +176,33 @@
   object-fit: cover;
 }
 
+.nnn {
+  position: relative;
+  top: 30px;
+  left: 485px;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.name {
+  position: relative;
+  top: 75px;
+  left: 425px;
+  height: 40px;
+  width: 250px;
+  background-color: #f1f1f1;
+  border-color: #f1f1f1;
+  border-style: solid;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  padding: 0 0 0 10px;
+  transition: all .3s;
+}
+
 .c {
   position: relative;
   top: 30px;
-  left: 488px;
+  left: 463px;
   font-weight: 400;
   font-size: 15px;
 }
@@ -187,9 +210,9 @@
 .ccc {
   position: relative;
   top: 75px;
-  left: 435px;
+  left: 410px;
   height: 40px;
-  width: 550px;
+  width: 250px;
   background-color: #f1f1f1;
   border-color: #f1f1f1;
   border-style: solid;
@@ -225,7 +248,7 @@
 .fecha {
   position: relative;
   top: 145px;
-  left: 489px;
+  left: 488px;
   font-weight: 400;
   font-size: 15px;
 }
@@ -248,7 +271,7 @@
 .pp {
   position: relative;
   top: 101px;
-  left: 790px;
+  left: 786px;
   font-weight: 400;
   font-size: 15px;
 }
@@ -268,7 +291,7 @@
   transition: all .3s;
 }
 
-.id1 {
+.ts1 {
   position: relative;
   top: 170px;
   left: 489px;
@@ -276,12 +299,35 @@
   font-size: 15px;
 }
 
+.ts2 {
+  position: relative;
+  top: 215px;
+  left: 375px;
+  height: 40px;
+  width: 262px;
+  background-color: #f1f1f1;
+  border-color: #f1f1f1;
+  border-style: solid;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  padding: 0 0 0 10px;
+  transition: all .3s;
+}
+
+.id1 {
+  position: relative;
+  top: 127px;
+  left: 787px;
+  font-weight: 400;
+  font-size: 15px;
+}
+
 .id2 {
   position: relative;
-  top: 205px;
-  left: 333px;
+  top: 173px;
+  left: 745px;
   height: 40px;
-  width: 550px;
+  width: 250px;
   background-color: #f1f1f1;
   border-color: #f1f1f1;
   border-style: solid;
@@ -294,7 +340,7 @@
 .sub2 {
   position: absolute;
   left: 486px;
-  top: 460px;
+  top: 470px;
   width: 565px;
   height: 45px;
   font-family: 'Poppins', sans-serif;
