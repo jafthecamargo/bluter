@@ -1,8 +1,37 @@
 import React, { useState } from "react";
 import {useNavigate} from 'react-router-dom'
 import "./styles/Formulario.css";
+import arrow from "./img/arrow-left.svg";
+import fondo from "./img/4.jpg";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 const Formulario = () => {
+
+  let correo = "jethrocamargo@gmail.com";
+  let asunto = "BLUTER - SOLICITUD"
+  let texto;
+
+  const enviarCorreo = () => {
+    const correoData = {
+      destino: correo,
+      asunto: asunto,
+      texto: texto,
+    };
+
+    axios
+      .post("http://localhost:3001/enviar-correo", correoData)
+      .then((response) => {
+        console.log(response.data.message);
+      })
+      .catch((error) => {
+        console.log("Error al enviar el correo: ", error);
+      });
+  };
+
+  function back() {
+    window.location.href = '/signin';
+  }
 
   const navigate = useNavigate();
   /**useState para almacenar los valores del formulario, como valor inicial estamos creando un
@@ -186,6 +215,18 @@ const Formulario = () => {
   };
 
   /**Funcion que se encarga de manejar el envio del formulario */
+
+  const env = () => {
+    enviarCorreo();
+    Swal.fire({
+      title: "Solicitud Enviada",
+      icon: "success",
+      timer: 1500,
+      showConfirmButton: false,
+      allowOutsideClick: false,
+    });
+  };
+
   const handleSubmit = (e) => {
     /**preventDefault evita que el formulario se envie automaticamente al presionar el boton de envio */
     e.preventDefault();
@@ -193,12 +234,12 @@ const Formulario = () => {
     /** se llama a la funcion validateAll para validar todos los campos y su valor se almacena en la variable
      * isValid
      */
-    const isValid = validateAll();
+    //const isValid = validateAll();
 
     /**si isValid es falso, entonces la ejecucion de la funcion se detiene y se retorna un valor negativo */
-    if (!isValid) {
-      return false;
-    }
+    //if (!isValid) {
+      //return false;
+    //}
 
     /**en caso de que isValid sea true entonces se mostrara una alerta mostrando los valores ingresados
      * en el formulario usando JSON.stringify(), esta funcion convierte el objeto 'values' en una cadena JSON
@@ -206,7 +247,14 @@ const Formulario = () => {
     //alert(JSON.stringify(values));
 
     //ocupo navigate para poder redirigir a otra pestaña, lo ocupare momentaneamente para enviar los correos
-    navigate('/correo')
+
+    texto = `<h1>${name}</h1>
+             <h1>${edad}</h1>
+             <h1>${typeBlood}</h1>
+             <h1>${email}</h1>
+             <h1>${cel}</h1>
+             <h1>${info}</h1>`;
+    env();
   };
 
   /**se extraen los valores de las propiedades 'name', 'email', 'typeBlood' del objeto 'values'
@@ -232,40 +280,48 @@ const Formulario = () => {
   } = validations;
 
   return (
-    <>
-      <div className="container">
-        <h2>Formulario de solicitud de donacion de sangre</h2>
-        <form onSubmit={handleSubmit} className="formulario" >
-          <div>
-            <label>
-              Nombre:
-              <input
-                type="text"
-                name="name"
-                value={name}
-                onChange={handleChange}
-                onBlur={validateOne}
+      <div>
+        <img className='fffff' src={fondo} alt='fondo-bluter'></img>
+        <div className='div111'>
+          <div className='div222'>
+            <h4 className='hhh'>Formulario de Solicitud</h4>
+          </div>
+          <div className='div333'>
+          <form onSubmit={handleSubmit}>
+            <div className='form-1'>
+              <label className='n'>
+                Nombre:
+                <input
+                  type="text"
+                  name="name"
+                  value={name}
+                  className='n-1'
+                  onChange={handleChange}
+                  placeholder='Ingresa el nombre del solicitante'
+                  required
               />
               <div>{nameVal}</div>
             </label>
           </div>
 
-          <div>
-            <label>
+          <div className='form-2'>
+            <label className='e'>
               Edad:
               <input
                 type="number"
                 name="edad"
                 value={edad}
+                className='e-1'
                 onChange={handleChange}
-                onBlur={validateOne}
+                placeholder='Ingresa la edad'
+                required
               />
               <div>{edadVal}</div>
             </label>
           </div>
 
-          <div>
-            <p>Indique su tipo de sangre</p>
+          <div className='form-3'>
+            <p>Indique el tipo de sangre</p>
             <label>
               A+
               <input
@@ -273,7 +329,7 @@ const Formulario = () => {
                 name="typeBlood"
                 value="A+"
                 onChange={handleChange}
-                onBlur={validateOne}
+                required
               />
             </label>
 
@@ -284,7 +340,7 @@ const Formulario = () => {
                 name="typeBlood"
                 value="O+"
                 onChange={handleChange}
-                onBlur={validateOne}
+                required
               />
             </label>
 
@@ -296,6 +352,7 @@ const Formulario = () => {
                 value="B+"
                 onChange={handleChange}
                 onBlur={validateOne}
+                required
               />
             </label>
 
@@ -353,59 +410,69 @@ const Formulario = () => {
                 onBlur={validateOne}
               />
             </label>
+          </div>
 
-            <div>
-              <label>
-                Email:
+            <div className='form-4'>
+              <label  className='ccccc'>
+                Correo:
                 <input
                   type="email"
                   name="email"
                   value={email}
+                  className='ccccc-1'
                   onChange={handleChange}
-                  onBlur={validateOne}
+                  placeholder='Ingresa el correo'
+                  required
                 />
                 <div>{emailVal}</div>
               </label>
             </div>
 
-            <div>
-              <label>
+            <div className='form-5'>
+              <label className='t'>
                 Telefono:
                 <input
                   type="tel"
                   name="cel"
                   value={cel}
+                  className='t-1'
                   onChange={handleChange}
-                  onBlur={validateOne}
+                  placeholder='Ingresa el telefono'
+                  required
                 />
                 <div>{celVal}</div>
               </label>
             </div>
 
-            <div>
-              <label>Informacion medica:</label>
+            <div className='form-6'>
+              <label className='info-1'>Informacion medica:</label>
               <textarea
                 type="text"
                 name="info"
                 value={info}
+                className='info-2'
                 onChange={handleChange}
-                onBlur={validateOne}
                 placeholder="Escriba aqui si tiene alergia a algun medicamento, asi como tambien si se encuentra tomando algun medicamento"
               />
               <div>{infoVal}</div>
-            </div>
             <div>{typeBloodVal}</div>
           </div>
 
-          <button type="submit">Enviar</button>
-        </form>
+          <button type="submit" className='env'>Enviar</button>
+          </form>
+          </div>
 
-        <div>
-          <h2>Valores del formulario</h2>
-          <p>{JSON.stringify(values)}</p>
+           <div className='div444' onClick={back}>
+             <img className='back' src={arrow} alt='back' onClick={back}></img>
+           </div>
+
+        <div className='vv'></div>
         </div>
       </div>
-    </>
   );
 };
 export default Formulario
+
+/*
+<p>{JSON.stringify(values)}</p>
+ */

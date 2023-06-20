@@ -8,7 +8,6 @@ import SignIn from './SignIn';
 import Formulario from "./Formulario";
 import Principal from "./Principal";
 import Privacy from './Privacy'
-import Correo from './Correo'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,7 +17,7 @@ root.render(
           <Route path='app' element={<App />} />
           <Route path='login' element={<Login />} />
           <Route path='signin' element={<SignIn />} />
-          <Route path='informe' element={<Principal />} />
+          <Route path='principal' element={<Principal />} />
           <Route path='formulario' element={<Formulario />} />
           <Route path='privacy' element={<Privacy/>}/>
       </Routes>

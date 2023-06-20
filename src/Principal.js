@@ -1,12 +1,6 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { app } from "./fb";
-import {
-  getFirestore,
-  getDocs,
-  collection,
-  query,
-  where,
-} from "firebase/firestore";
+import { getFirestore, getDocs, collection, query, where, } from "firebase/firestore";
 import "./styles/Principal.css";
 import logo from "./img/bluter.svg";
 import Swal from "sweetalert2";
@@ -43,41 +37,6 @@ function Principal() {
   const [data, setData] = React.useState([]);
 
   const uid = app.auth().currentUser.email;
-
-  useEffect(() => {
-  const user = app.auth().currentUser;
-
-  if (user) {
-    const querydb = getFirestore();
-    const queryCollection = collection(querydb, "datos");
-    const queryFilter = query(queryCollection, where('email', '==', user.email));
-
-    getDocs(queryFilter)
-      .then((querySnapshot) => {
-        const userData = [];
-        querySnapshot.forEach((doc) => {
-          const data = doc.data();
-          // Accede a los datos necesarios del usuario
-          const name = data.name;
-          const peso = data.peso;
-          const date = data.date;
-          // ...
-          userData.push({
-            id: doc.id,
-            name,
-            peso,
-            date,
-            // ...
-          });
-        });
-        setData(userData);
-      })
-      .catch((error) => {
-        console.error("Error al obtener los datos: ", error);
-      });
-  }
-}, []);
-
 
   function form() {
     window.location.href = "/formulario";
@@ -120,8 +79,15 @@ function Principal() {
     }).then((result) => {
       if (result.isConfirmed) {
         asunto = "BLUTER - POSTULACIÓN";
-        texto = "Te has postulado correctamente";
+        texto = `<h1>Te has postulado correctamente</h1>`;
         enviarCorreo();
+        Swal.fire({
+          title: "Te has postulado",
+          icon: "success",
+          timer: 1500,
+          showConfirmButton: false,
+          allowOutsideClick: false,
+        });
       }
     })
   };
@@ -136,26 +102,6 @@ function Principal() {
       allowOutsideClick: false,
     });
   };
-
-  useEffect(() => {
-    const querydb = getFirestore();
-    const queryCollection = collection(querydb, "informes");
-    let queryFilter;
-    if (app.auth().currentUser.email === uid) {
-      queryFilter = query(queryCollection, where("email", "==", uid));
-    } else {
-      queryFilter = queryCollection;
-    }
-    getDocs(queryFilter).then((res) =>
-      setData(
-        res.docs.map((informe) => ({
-          id: informe.id,
-          email: informe.data().email,
-          ...informe.data(),
-        }))
-      )
-    );
-  }, [uid]);
 
   return (
     <div>
@@ -187,7 +133,7 @@ function Principal() {
         </button>
       </div>
       <div className="centrosd">
-        <h4>Centros de Donación</h4>
+        <h4 className='hh'>Centros de Donación</h4>
         <div className="cd1" onClick={cnts}>
           <Centros
             nombre="Centro Nacional de la Transfusión Sanguínea"
