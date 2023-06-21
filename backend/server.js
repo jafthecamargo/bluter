@@ -33,7 +33,32 @@ app.post("/enviar-correo", (req, res) => {
     to: destino,
     subject: asunto,
     //text: texto,
-    html: `<p>${texto}</p>`,
+    html: `<!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Correo electrónico de ejemplo</title>
+    </head>
+    <body>
+      <h1>Respuesta a solicitud de donación</h1>
+      
+      <p>${texto}</p>
+
+      <img src="cid:enfermera.png"/>
+      
+      <p>Gracias,</p>
+      
+      <p>Tu nombre</p>
+    </body>
+    </html>
+    `,
+    attachments:[
+      {
+        filename:'enfermera.png',
+        path:'./images/enfermera.png',
+        cid:'enfermera.png' //Identificador de contenido
+      }
+    ]
   };
 
   //envia el correo
