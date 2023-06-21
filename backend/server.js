@@ -40,6 +40,7 @@ app.post("/enviar-correo", (req, res) => {
       <title>Correo electrónico de ejemplo</title>
     </head>
     <body>
+      <img src="cid:bluter.png"/>
       <h1>Respuesta a solicitud de donación</h1>
       
       <p>${texto}</p>
@@ -57,6 +58,11 @@ app.post("/enviar-correo", (req, res) => {
         filename:'enfermera.png',
         path:'./images/enfermera.png',
         cid:'enfermera.png' //Identificador de contenido
+      },
+      {
+        filename:'bluter.png',
+        path:'./images/bluter.png',
+        cid:'bluter.png'
       }
     ]
   };
