@@ -27,18 +27,16 @@ app.post("/enviar-correo", (req, res) => {
   });
 
   //configura contenido del correo
-
   const mailOptions = {
     from: "blutercenter@gmail.com",
     to: destino,
     subject: asunto,
-    //text: texto,
     html: `<!DOCTYPE html>
     <html>
     
     <head>
       <meta charset="utf-8">
-      <title>Correo electrónico de ejemplo</title>
+      <title>Correo Electrónico</title>
     </head>
     
     <body>
@@ -76,5 +74,5 @@ app.post("/enviar-correo", (req, res) => {
 });
 
 app.listen(3001, () => {
-  console.log("Servidor en ejecucion en el puerto 3001");
+  console.log("Servidor en ejecución en el puerto 3001");
 });
