@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import axios from "axios";
 
 function NotificacionOK(props) {
-  let correo = "pakmanpro2001@gmail.com";
+  let correo = "itzelraji12@gmail.com";
   let asunto;
   let texto;
 
