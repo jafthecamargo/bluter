@@ -61,6 +61,7 @@ function Login(props) {
             const peso = e.target.peso.value;
             const curp = e.target.curp.value;
             const ts = e.target.ts.value;
+            const ps = 'No'
 
             // Crea el usuario en Firebase Authentication
             if (pass.length < 6) {
@@ -86,6 +87,7 @@ function Login(props) {
                         peso: peso,
                         curp: curp,
                         ts: ts,
+                        ps: ps
                     });
                     console.log("Documento creado con ID: ", docRef.id);
                 } catch (error) {

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { app } from "./fb";
-import { getFirestore, getDocs, collection, query, where, } from "firebase/firestore";
+import { getFirestore, getDocs, updateDoc, collection, query, where, doc } from "firebase/firestore";
 import "./styles/Principal.css";
 import logo from "./img/bluter.svg";
 import Swal from "sweetalert2";
@@ -102,7 +102,45 @@ function Principal() {
     cerrar();
   };
 
-  const postular = () => {
+  const postular = async () => {
+  if (userInfo.ps === 'Si') {
+    Swal.fire({
+      title: "Ya te encuentras postulado",
+      text: "¿Deseas ya no estar postulado?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: 'Sí',
+      showConfirmButton: true,
+      cancelButtonText: 'No',
+      allowOutsideClick: false,
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        asunto = "BLUTER - POSTULACIÓN";
+        texto = `<h1>Ya no te encuentras postulado</h1>`;
+        enviarCorreo();
+
+        const db = getFirestore();
+        const usuarioDocRef = doc(db, 'datos', userInfo.id);
+
+        try {
+          await updateDoc(usuarioDocRef, { ps: 'No' });
+          Swal.fire({
+            title: "Ya no te encuentras postulado",
+            icon: "success",
+            timer: 1500,
+            showConfirmButton: false,
+            allowOutsideClick: false,
+          });
+          setUserInfo(prevUserInfo => ({
+            ...prevUserInfo,
+            ps: "No"
+          }));
+        } catch (error) {
+          console.error("Error al actualizar el campo 'ps' en Firestore:", error);
+        }
+      }
+    });
+  } else {
     Swal.fire({
       title: "Postular",
       text: "¿Estás seguro que deseas postularte?",
@@ -112,21 +150,35 @@ function Principal() {
       showConfirmButton: true,
       cancelButtonText: 'No',
       allowOutsideClick: false,
-    }).then((result) => {
+    }).then(async (result) => {
       if (result.isConfirmed) {
         asunto = "BLUTER - POSTULACIÓN";
         texto = `<h1>Te has postulado correctamente</h1>`;
         enviarCorreo();
-        Swal.fire({
-          title: "Te has postulado",
-          icon: "success",
-          timer: 1500,
-          showConfirmButton: false,
-          allowOutsideClick: false,
-        });
+
+        const db = getFirestore();
+        const usuarioDocRef = doc(db, 'datos', userInfo.id);
+
+        try {
+          await updateDoc(usuarioDocRef, { ps: 'Si' });
+          Swal.fire({
+            title: "Te has postulado",
+            icon: "success",
+            timer: 1500,
+            showConfirmButton: false,
+            allowOutsideClick: false,
+          });
+          setUserInfo(prevUserInfo => ({
+            ...prevUserInfo,
+            ps: "Si"
+          }));
+        } catch (error) {
+          console.error("Error al actualizar el campo 'ps' en Firestore:", error);
+        }
       }
     })
-  };
+  }
+};
 
   const cerrar = () => {
     Swal.fire({
@@ -202,14 +254,21 @@ function Principal() {
           <p>Nombre:</p>
           <p>Edad:</p>
           <p>Peso:</p>
+          <p>Postulado:</p>
         </div>
+
         {userInfo.name && (
-        <div className="info1" key={userInfo.id}>
-          <p>{userInfo.name}</p>
-          <p>{userInfo.date && calcEdad(userInfo.date)} años</p>
-          <p>{userInfo.peso} Kg</p>
-        </div>
+          <div className="info1" key={userInfo.id}>
+            <p>{userInfo.name}</p>
+            <p>{userInfo.date && calcEdad(userInfo.date)} años</p>
+            <p>{userInfo.peso} Kg</p>
+            <p>
+              <span className={`status-dot ${userInfo.ps === 'Si' ? 'green-dot' : 'red-dot'}`}></span>
+              {userInfo.ps}
+            </p>
+          </div>
         )}
+
         <p className='info-d'>Muestra de la información principal que tenemos sobre ti</p>
         <div className="t1">
           <TipoS tipo="A+" color="#BCDDF1" />
