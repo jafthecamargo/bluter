@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { app } from "./fb";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import './styles/Login.css';
@@ -14,7 +14,6 @@ function back() {
 function Login(props) {
 
     const [isRegistered, setIsRegistered] = React.useState(false);
-    const [curp, setCurp] = useState("");
 
     const validarCurp = (curp) => {
         // Expresión regular para validar el formato del CURP

@@ -35,22 +35,18 @@ app.post("/enviar-correo", (req, res) => {
     //text: texto,
     html: `<!DOCTYPE html>
     <html>
+    
     <head>
       <meta charset="utf-8">
       <title>Correo electrónico de ejemplo</title>
     </head>
+    
     <body>
-      <img src="cid:bluter.png"/>
-      <h1>Respuesta a solicitud de donación</h1>
-      
       <p>${texto}</p>
-
       <img src="cid:enfermera.png"/>
-      
-      <p>Gracias,</p>
-      
-      <p>Tu nombre</p>
+      <img src="cid:bluter.png"/>
     </body>
+    
     </html>
     `,
     attachments:[
