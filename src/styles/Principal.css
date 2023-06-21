@@ -215,7 +215,7 @@
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
   font-weight: 300;
-  padding: 20px;
+  padding: 15px;
 
   /* Position the tooltip */
   position: absolute;
@@ -242,7 +242,7 @@
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
   font-weight: 300;
-  padding: 20px;
+  padding: 15px;
 
   /* Position the tooltip */
   position: absolute;
@@ -269,7 +269,7 @@
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
   font-weight: 300;
-  padding: 20px;
+  padding: 15px;
 
   /* Position the tooltip */
   position: absolute;
@@ -296,7 +296,7 @@
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
   font-weight: 300;
-  padding: 20px;
+  padding: 15px;
 
   /* Position the tooltip */
   position: absolute;
@@ -324,7 +324,7 @@
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
   font-weight: 300;
-  padding: 20px;
+  padding: 15px;
 
   /* Position the tooltip */
   position: absolute;
@@ -352,7 +352,7 @@
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
   font-weight: 300;
-  padding: 20px;
+  padding: 15px;
 
   /* Position the tooltip */
   position: absolute;
@@ -380,7 +380,7 @@
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
   font-weight: 300;
-  padding: 20px;
+  padding: 15px;
 
   /* Position the tooltip */
   position: absolute;
@@ -408,7 +408,7 @@
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
   font-weight: 400;
-  padding: 20px;
+  padding: 15px;
 
   /* Position the tooltip */
   position: absolute;
@@ -465,4 +465,26 @@ h5 {
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
   font-weight: 500;
+}
+
+.info-p {
+  position: relative;
+  top: 470px;
+  left: 15px;
+  width: 430px;
+  font-size: 12px;
+  font-weight: 300;
+  text-align: center;
+  font-style: italic;
+}
+
+.info-d {
+  position: absolute;
+  top: 150px;
+  left: 245px;
+  width: 190px;
+  font-size: 12px;
+  font-weight: 300;
+  text-align: center;
+  font-style: italic;
 }

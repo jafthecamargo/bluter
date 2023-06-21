@@ -210,7 +210,7 @@ function Principal() {
           <p>{userInfo.peso} Kg</p>
         </div>
         )}
-
+        <p className='info-d'>Muestra de la información principal que tenemos sobre ti</p>
         <div className="t1">
           <TipoS tipo="A+" color="#BCDDF1" />
           <span className="tooltiptext">
@@ -298,7 +298,7 @@ function Principal() {
             <h5>Compatibilidad de recepción:</h5> O-, A-, B-, AB-
           </span>
         </div>
-
+        <p className='info-p'>Pasa el cursor sobre cada tipo de sangre para obtener información sobre su compatibilidad y características</p>
         <button className="soli" onClick={form}>
           Solicitar
         </button>
