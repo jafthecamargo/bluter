@@ -24,12 +24,13 @@ function Privacy() {
                     <br/><br/>
                     Cuando te registras en nuestro sistema de apoyo para donativos sanguíneos, podemos solicitar ciertos datos personales para brindarte un servicio eficiente y seguro. La información que recopilamos puede incluir, pero no se limita a:
                     <br/><br/>
-                    1. Nombre completo<br/>
+                    1. Nombre<br/>
                     2. Dirección de correo electrónico<br/>
                     3. Contraseña<br/>
                     4. Fecha de nacimiento<br/>
                     5. Peso<br/>
-                    6. CURP (Clave Única de Registro de Población)
+                    6. Tipo de sangre<br/>
+                    7. CURP (Clave Única de Registro de Población)
                     <br/><br/>
                         <strong>Uso de la Información Personal</strong>
                     <br/><br/>
@@ -69,7 +70,7 @@ function Privacy() {
                     Si tienes alguna pregunta, inquietud o solicitud relacionada con esta política de privacidad, no dudes en contactarnos:
                     <br/><br/>
                     © 2023 BLUTER Todos los derechos reservados<br/>
-                    bluter@gmail.com<br/>
+                    blutercenter@gmail.com<br/>
                     5512131415<br/>
                     </p>
                 </div>

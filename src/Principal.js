@@ -319,7 +319,7 @@ function Principal() {
           <span className="tooltiptext">
             El tipo de sangre AB+ es un grupo sanguíneo que presenta tanto el antígeno A como el antígeno B en la superficie de los glóbulos rojos y el factor Rh positivo.
             <br></br><br></br>
-            <h5>Compatibilidad de donación:</h5>: AB+
+            <h5>Compatibilidad de donación:</h5> AB+
             <br></br><br></br>
             <h5>Compatibilidad de recepción:</h5> A+, A-, B+, B-, AB+, AB-, O+, O-
           </span>
